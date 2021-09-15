@@ -9,16 +9,19 @@ const Home = ({ jobs }) => {
         {jobs && (
         <div >
           <div >
-            <h1>Places to stay near you</h1>
+            <h1>its showing</h1>
             <div >
               {jobs.map((job) => (
                 <Link href={`job/${job.slug.current}`}>
                   <div key={job._id} className="card">
                     <img src={urlFor(job.mainImage)} />
-                    <h3>{job.title}</h3>
+                    <h3>{job.jobtitle}</h3>
+                    <p>{job.companyName}</p>
+                    <p>{job.city},{job.province}</p>
                     <p>{job.description}</p>
                     <h3>
                       <b>£{job.salary} per year</b>
+                    <p>{job.datePosted}</p>
                     </h3>
                   </div>
                 </Link>

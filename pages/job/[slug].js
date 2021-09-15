@@ -1,4 +1,5 @@
 import { sanityClient } from "../../sanity"
+import JobItem from '../../components/jobItem/jobItem'
 // import { isMultiple } from "../../utils"
 // // import Image from "../../components/Image"
 // // import Review from "../../components/Review"
@@ -6,22 +7,44 @@ import { sanityClient } from "../../sanity"
 
 
 
+// const Job = ({
+//   title,
+//   description,
+//   province,
+//   salary,
+// }) => {
+//   return (
+//     <div className="container">
+//       <h1>
+//         <b>{title}</b>
+//       </h1>
+//       <p>{province}</p>
+//       <p> {description}</p>
+//        <p>{salary}</p>
+      
+      
+//     </div>
+//   )
+// }
 const Job = ({
-  title,
-  description,
-  province,
-  salary,
+jobtitle,
+jobType,
+description,
+province,
+salary,
+host,
+city
+
 }) => {
   return (
-    <div className="container">
-      <h1>
-        <b>{title}</b>
-      </h1>
-      <p>{province}</p>
-      <p> {description}</p>
-       <p>{salary}</p>
-      
-      
+    <div>
+    <JobItem
+    salary={salary}
+    province={province}
+    jobTitle={jobtitle}
+    city={city}
+    
+    />
     </div>
   )
 }
@@ -35,7 +58,6 @@ export const getServerSideProps = async (pageContext) => {
     city,
     salary,
     province,
-    bedrooms,
     description,
     host->{
       _id,
@@ -55,7 +77,7 @@ export const getServerSideProps = async (pageContext) => {
   } else {
     return {
       props: {
-        title: job.jobtitle,
+        jobtitle: job.jobtitle,
         jobType: job.jobType,
         city: job.city,
         province: job.province,
