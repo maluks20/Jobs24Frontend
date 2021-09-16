@@ -10,6 +10,7 @@ function JobItemHeader(props) {
                 <button class='m-2'>Apply Now</button>
                 <button class='m-2'>Read More</button>
             </div>
+            <h1>{props.host}</h1>
         </div>
         </section>
     )

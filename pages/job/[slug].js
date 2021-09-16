@@ -35,7 +35,9 @@ salary,
 host,
 city
 
+
 }) => {
+  console.log(host.name)
   return (
     <div>
     <JobItem
@@ -43,6 +45,7 @@ city
     province={province}
     jobTitle={jobtitle}
     city={city}
+    host={host?.name}
     
     />
     </div>
